@@ -1,0 +1,3440 @@
+[
+  {
+    "type": "application_expression",
+    "named": true,
+    "fields": {
+      "fn": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_expression",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "here_expression",
+            "named": true
+          },
+          {
+            "type": "high_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "hole_expression",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "match_expression",
+            "named": true
+          },
+          {
+            "type": "prim_expression",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "subscribe_expression",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "block_expression",
+          "named": true
+        },
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "double_string",
+          "named": true
+        },
+        {
+          "type": "here_expression",
+          "named": true
+        },
+        {
+          "type": "high_identifier_expression",
+          "named": true
+        },
+        {
+          "type": "hole_expression",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "low_identifier_expression",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "application_pattern",
+    "named": true,
+    "fields": {
+      "fn": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "application_pattern",
+          "named": true
+        },
+        {
+          "type": "binary_pattern",
+          "named": true
+        },
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "double_string",
+          "named": true
+        },
+        {
+          "type": "high_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "hole_pattern",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "low_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_string",
+          "named": true
+        },
+        {
+          "type": "unary_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "application_type",
+    "named": true,
+    "fields": {
+      "fn": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "high_identifier_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "application_type",
+          "named": true
+        },
+        {
+          "type": "binary_type",
+          "named": true
+        },
+        {
+          "type": "high_identifier_type",
+          "named": true
+        },
+        {
+          "type": "low_identifier_type",
+          "named": true
+        },
+        {
+          "type": "tag_type",
+          "named": true
+        },
+        {
+          "type": "unary_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ascription_expression",
+    "named": true,
+    "fields": {
+      "expr": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_expression",
+            "named": true
+          },
+          {
+            "type": "ascription_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_expression",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "here_expression",
+            "named": true
+          },
+          {
+            "type": "high_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "hole_expression",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "match_expression",
+            "named": true
+          },
+          {
+            "type": "prim_expression",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "subscribe_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binary_arity",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_expression",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_expression",
+            "named": true
+          },
+          {
+            "type": "ascription_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_expression",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "here_expression",
+            "named": true
+          },
+          {
+            "type": "high_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "hole_expression",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "match_expression",
+            "named": true
+          },
+          {
+            "type": "prim_expression",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "subscribe_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addsub_op",
+            "named": true
+          },
+          {
+            "type": "and_op",
+            "named": true
+          },
+          {
+            "type": "bi_arrow_op",
+            "named": true
+          },
+          {
+            "type": "colon_op",
+            "named": true
+          },
+          {
+            "type": "comma_op",
+            "named": true
+          },
+          {
+            "type": "comparison_op",
+            "named": true
+          },
+          {
+            "type": "composition_op",
+            "named": true
+          },
+          {
+            "type": "currency_op",
+            "named": true
+          },
+          {
+            "type": "dot_op",
+            "named": true
+          },
+          {
+            "type": "exponent_op",
+            "named": true
+          },
+          {
+            "type": "inequality_op",
+            "named": true
+          },
+          {
+            "type": "lr_arrow_op",
+            "named": true
+          },
+          {
+            "type": "muldiv_op",
+            "named": true
+          },
+          {
+            "type": "or_op",
+            "named": true
+          },
+          {
+            "type": "quantifier_op",
+            "named": true
+          },
+          {
+            "type": "unary_fn_op",
+            "named": true
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_expression",
+            "named": true
+          },
+          {
+            "type": "ascription_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_expression",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "here_expression",
+            "named": true
+          },
+          {
+            "type": "high_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "hole_expression",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "match_expression",
+            "named": true
+          },
+          {
+            "type": "prim_expression",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "subscribe_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binary_pattern",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_pattern",
+            "named": true
+          },
+          {
+            "type": "binary_pattern",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "hole_pattern",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "unary_pattern",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addsub_op",
+            "named": true
+          },
+          {
+            "type": "and_op",
+            "named": true
+          },
+          {
+            "type": "bi_arrow_op",
+            "named": true
+          },
+          {
+            "type": "colon_op",
+            "named": true
+          },
+          {
+            "type": "comma_op",
+            "named": true
+          },
+          {
+            "type": "comparison_op",
+            "named": true
+          },
+          {
+            "type": "composition_op",
+            "named": true
+          },
+          {
+            "type": "currency_op",
+            "named": true
+          },
+          {
+            "type": "dot_op",
+            "named": true
+          },
+          {
+            "type": "exponent_op",
+            "named": true
+          },
+          {
+            "type": "inequality_op",
+            "named": true
+          },
+          {
+            "type": "lr_arrow_op",
+            "named": true
+          },
+          {
+            "type": "muldiv_op",
+            "named": true
+          },
+          {
+            "type": "or_op",
+            "named": true
+          },
+          {
+            "type": "quantifier_op",
+            "named": true
+          },
+          {
+            "type": "unary_fn_op",
+            "named": true
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_pattern",
+            "named": true
+          },
+          {
+            "type": "binary_pattern",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "hole_pattern",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "unary_pattern",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binary_type",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addsub_op",
+            "named": true
+          },
+          {
+            "type": "and_op",
+            "named": true
+          },
+          {
+            "type": "bi_arrow_op",
+            "named": true
+          },
+          {
+            "type": "colon_op",
+            "named": true
+          },
+          {
+            "type": "comma_op",
+            "named": true
+          },
+          {
+            "type": "comparison_op",
+            "named": true
+          },
+          {
+            "type": "composition_op",
+            "named": true
+          },
+          {
+            "type": "currency_op",
+            "named": true
+          },
+          {
+            "type": "exponent_op",
+            "named": true
+          },
+          {
+            "type": "inequality_op",
+            "named": true
+          },
+          {
+            "type": "lr_arrow_op",
+            "named": true
+          },
+          {
+            "type": "muldiv_op",
+            "named": true
+          },
+          {
+            "type": "or_op",
+            "named": true
+          },
+          {
+            "type": "quantifier_op",
+            "named": true
+          },
+          {
+            "type": "unary_fn_op",
+            "named": true
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "block_expression",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_expression",
+            "named": true
+          },
+          {
+            "type": "ascription_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_expression",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "here_expression",
+            "named": true
+          },
+          {
+            "type": "high_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "hole_expression",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "match_expression",
+            "named": true
+          },
+          {
+            "type": "prim_expression",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "require_expression",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "subscribe_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "preamble": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "import",
+            "named": true
+          },
+          {
+            "type": "target",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "constructors",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "application_type",
+          "named": true
+        },
+        {
+          "type": "binary_type",
+          "named": true
+        },
+        {
+          "type": "high_identifier_type",
+          "named": true
+        },
+        {
+          "type": "low_identifier_type",
+          "named": true
+        },
+        {
+          "type": "tag_type",
+          "named": true
+        },
+        {
+          "type": "unary_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "data",
+    "named": true,
+    "fields": {
+      "constructors": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "constructors",
+            "named": true
+          }
+        ]
+      },
+      "export": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "export_flag",
+            "named": true
+          }
+        ]
+      },
+      "global": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "global_flag",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "def_kind",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "definition",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_pattern",
+            "named": true
+          },
+          {
+            "type": "binary_pattern",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "hole_pattern",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_application_pattern",
+            "named": true
+          },
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "unary_pattern",
+            "named": true
+          }
+        ]
+      },
+      "result_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "double_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "interpolation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "export",
+    "named": true,
+    "fields": {
+      "arity": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "binary_arity",
+            "named": true
+          },
+          {
+            "type": "unary_arity",
+            "named": true
+          }
+        ]
+      },
+      "ideqs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ideqs",
+            "named": true
+          }
+        ]
+      },
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "def_kind",
+            "named": true
+          },
+          {
+            "type": "topic_kind",
+            "named": true
+          },
+          {
+            "type": "type_kind",
+            "named": true
+          }
+        ]
+      },
+      "package": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_package",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "export_flag",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "field",
+    "named": true,
+    "fields": {
+      "export": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "export_flag",
+            "named": true
+          }
+        ]
+      },
+      "global": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "global_flag",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "fields",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "global_flag",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "here_expression",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "high_identifier_expression",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "high_identifier_pattern",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "high_identifier_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "hole_expression",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "hole_package",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "hole_pattern",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "id",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "identifier_package",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "ideq",
+    "named": true,
+    "fields": {
+      "from": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "id",
+            "named": true
+          }
+        ]
+      },
+      "to": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "id",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ideqs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ideq",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if_expression",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "then": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "import",
+    "named": true,
+    "fields": {
+      "arity": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "binary_arity",
+            "named": true
+          },
+          {
+            "type": "unary_arity",
+            "named": true
+          }
+        ]
+      },
+      "ideqs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "hole_package",
+            "named": true
+          },
+          {
+            "type": "ideqs",
+            "named": true
+          }
+        ]
+      },
+      "kind": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "def_kind",
+            "named": true
+          },
+          {
+            "type": "topic_kind",
+            "named": true
+          },
+          {
+            "type": "type_kind",
+            "named": true
+          }
+        ]
+      },
+      "package": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_package",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "interpolation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "application_expression",
+          "named": true
+        },
+        {
+          "type": "ascription_expression",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "block_expression",
+          "named": true
+        },
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "double_string",
+          "named": true
+        },
+        {
+          "type": "here_expression",
+          "named": true
+        },
+        {
+          "type": "high_identifier_expression",
+          "named": true
+        },
+        {
+          "type": "hole_expression",
+          "named": true
+        },
+        {
+          "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "low_identifier_expression",
+          "named": true
+        },
+        {
+          "type": "match_expression",
+          "named": true
+        },
+        {
+          "type": "prim_expression",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "require_expression",
+          "named": true
+        },
+        {
+          "type": "single_string",
+          "named": true
+        },
+        {
+          "type": "subscribe_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_expression",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_expression",
+            "named": true
+          },
+          {
+            "type": "ascription_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_expression",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "here_expression",
+            "named": true
+          },
+          {
+            "type": "high_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "hole_expression",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "match_expression",
+            "named": true
+          },
+          {
+            "type": "prim_expression",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "require_expression",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "subscribe_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_pattern",
+            "named": true
+          },
+          {
+            "type": "binary_pattern",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "hole_pattern",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "unary_pattern",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "low_application_pattern",
+    "named": true,
+    "fields": {
+      "fn": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "application_pattern",
+          "named": true
+        },
+        {
+          "type": "binary_pattern",
+          "named": true
+        },
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "double_string",
+          "named": true
+        },
+        {
+          "type": "high_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "hole_pattern",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "low_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_string",
+          "named": true
+        },
+        {
+          "type": "unary_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "low_identifier_expression",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "low_identifier_pattern",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "low_identifier_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "match_expression",
+    "named": true,
+    "fields": {
+      "rules": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "match_rules",
+            "named": true
+          }
+        ]
+      },
+      "terms": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "match_terms",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "match_patterns",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "application_pattern",
+          "named": true
+        },
+        {
+          "type": "binary_pattern",
+          "named": true
+        },
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "double_string",
+          "named": true
+        },
+        {
+          "type": "high_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "hole_pattern",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "low_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_string",
+          "named": true
+        },
+        {
+          "type": "unary_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "match_rule",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "guard": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "patterns": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "match_patterns",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "match_rules",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "match_rule",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "match_terms",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "block_expression",
+          "named": true
+        },
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "double_string",
+          "named": true
+        },
+        {
+          "type": "here_expression",
+          "named": true
+        },
+        {
+          "type": "high_identifier_expression",
+          "named": true
+        },
+        {
+          "type": "hole_expression",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "low_identifier_expression",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "package",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_package",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "prim_expression",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "publish",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "require_expression",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_pattern",
+            "named": true
+          },
+          {
+            "type": "binary_pattern",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "hole_pattern",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "unary_pattern",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "data",
+          "named": true
+        },
+        {
+          "type": "export",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "package",
+          "named": true
+        },
+        {
+          "type": "publish",
+          "named": true
+        },
+        {
+          "type": "top_definition",
+          "named": true
+        },
+        {
+          "type": "top_target",
+          "named": true
+        },
+        {
+          "type": "topic",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "subscribe_expression",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "tag_type",
+    "named": true,
+    "fields": {
+      "tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "target",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_expression",
+            "named": true
+          }
+        ]
+      },
+      "extra_terms": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "\\",
+            "named": false
+          },
+          {
+            "type": "term_patterns",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_pattern",
+            "named": true
+          },
+          {
+            "type": "binary_pattern",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "hole_pattern",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_application_pattern",
+            "named": true
+          },
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "unary_pattern",
+            "named": true
+          }
+        ]
+      },
+      "result_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "term_patterns",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "application_pattern",
+          "named": true
+        },
+        {
+          "type": "binary_pattern",
+          "named": true
+        },
+        {
+          "type": "double",
+          "named": true
+        },
+        {
+          "type": "double_string",
+          "named": true
+        },
+        {
+          "type": "high_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "hole_pattern",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "low_identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_string",
+          "named": true
+        },
+        {
+          "type": "unary_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "top_definition",
+    "named": true,
+    "fields": {
+      "definition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "definition",
+            "named": true
+          }
+        ]
+      },
+      "export": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "export_flag",
+            "named": true
+          }
+        ]
+      },
+      "global": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "global_flag",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "top_target",
+    "named": true,
+    "fields": {
+      "export": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "export_flag",
+            "named": true
+          }
+        ]
+      },
+      "global": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "global_flag",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "target",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "topic",
+    "named": true,
+    "fields": {
+      "export": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "export_flag",
+            "named": true
+          }
+        ]
+      },
+      "global": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "global_flag",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "topic_kind",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "tuple",
+    "named": true,
+    "fields": {
+      "export": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "export_flag",
+            "named": true
+          }
+        ]
+      },
+      "fields": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "fields",
+            "named": true
+          }
+        ]
+      },
+      "global": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "global_flag",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "high_identifier_type",
+            "named": true
+          }
+        ]
+      },
+      "params": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_params",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "type_kind",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "type_params",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "low_identifier_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unary_arity",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "unary_expression",
+    "named": true,
+    "fields": {
+      "operand": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_expression",
+            "named": true
+          },
+          {
+            "type": "ascription_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_expression",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "here_expression",
+            "named": true
+          },
+          {
+            "type": "high_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "hole_expression",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "match_expression",
+            "named": true
+          },
+          {
+            "type": "prim_expression",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "subscribe_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addsub_op",
+            "named": true
+          },
+          {
+            "type": "and_op",
+            "named": true
+          },
+          {
+            "type": "bi_arrow_op",
+            "named": true
+          },
+          {
+            "type": "colon_op",
+            "named": true
+          },
+          {
+            "type": "comma_op",
+            "named": true
+          },
+          {
+            "type": "comparison_op",
+            "named": true
+          },
+          {
+            "type": "composition_op",
+            "named": true
+          },
+          {
+            "type": "currency_op",
+            "named": true
+          },
+          {
+            "type": "exponent_op",
+            "named": true
+          },
+          {
+            "type": "inequality_op",
+            "named": true
+          },
+          {
+            "type": "lr_arrow_op",
+            "named": true
+          },
+          {
+            "type": "muldiv_op",
+            "named": true
+          },
+          {
+            "type": "or_op",
+            "named": true
+          },
+          {
+            "type": "quantifier_op",
+            "named": true
+          },
+          {
+            "type": "unary_fn_op",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "unary_pattern",
+    "named": true,
+    "fields": {
+      "operand": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_pattern",
+            "named": true
+          },
+          {
+            "type": "binary_pattern",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "double_string",
+            "named": true
+          },
+          {
+            "type": "high_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "hole_pattern",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "low_identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "single_string",
+            "named": true
+          },
+          {
+            "type": "unary_pattern",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addsub_op",
+            "named": true
+          },
+          {
+            "type": "and_op",
+            "named": true
+          },
+          {
+            "type": "bi_arrow_op",
+            "named": true
+          },
+          {
+            "type": "colon_op",
+            "named": true
+          },
+          {
+            "type": "comma_op",
+            "named": true
+          },
+          {
+            "type": "comparison_op",
+            "named": true
+          },
+          {
+            "type": "composition_op",
+            "named": true
+          },
+          {
+            "type": "currency_op",
+            "named": true
+          },
+          {
+            "type": "exponent_op",
+            "named": true
+          },
+          {
+            "type": "inequality_op",
+            "named": true
+          },
+          {
+            "type": "lr_arrow_op",
+            "named": true
+          },
+          {
+            "type": "muldiv_op",
+            "named": true
+          },
+          {
+            "type": "or_op",
+            "named": true
+          },
+          {
+            "type": "quantifier_op",
+            "named": true
+          },
+          {
+            "type": "unary_fn_op",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "unary_type",
+    "named": true,
+    "fields": {
+      "operand": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "application_type",
+            "named": true
+          },
+          {
+            "type": "binary_type",
+            "named": true
+          },
+          {
+            "type": "high_identifier_type",
+            "named": true
+          },
+          {
+            "type": "low_identifier_type",
+            "named": true
+          },
+          {
+            "type": "tag_type",
+            "named": true
+          },
+          {
+            "type": "unary_type",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addsub_op",
+            "named": true
+          },
+          {
+            "type": "and_op",
+            "named": true
+          },
+          {
+            "type": "bi_arrow_op",
+            "named": true
+          },
+          {
+            "type": "colon_op",
+            "named": true
+          },
+          {
+            "type": "comma_op",
+            "named": true
+          },
+          {
+            "type": "comparison_op",
+            "named": true
+          },
+          {
+            "type": "composition_op",
+            "named": true
+          },
+          {
+            "type": "currency_op",
+            "named": true
+          },
+          {
+            "type": "exponent_op",
+            "named": true
+          },
+          {
+            "type": "inequality_op",
+            "named": true
+          },
+          {
+            "type": "lr_arrow_op",
+            "named": true
+          },
+          {
+            "type": "muldiv_op",
+            "named": true
+          },
+          {
+            "type": "or_op",
+            "named": true
+          },
+          {
+            "type": "quantifier_op",
+            "named": true
+          },
+          {
+            "type": "unary_fn_op",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "addsub_op",
+    "named": true
+  },
+  {
+    "type": "and_op",
+    "named": true
+  },
+  {
+    "type": "bi_arrow_op",
+    "named": true
+  },
+  {
+    "type": "binary",
+    "named": false
+  },
+  {
+    "type": "colon_op",
+    "named": true
+  },
+  {
+    "type": "comma_op",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "comparison_op",
+    "named": true
+  },
+  {
+    "type": "composition_op",
+    "named": true
+  },
+  {
+    "type": "currency_op",
+    "named": true
+  },
+  {
+    "type": "data",
+    "named": false
+  },
+  {
+    "type": "def",
+    "named": false
+  },
+  {
+    "type": "dot_op",
+    "named": true
+  },
+  {
+    "type": "double",
+    "named": true
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "exponent_op",
+    "named": true
+  },
+  {
+    "type": "export",
+    "named": false
+  },
+  {
+    "type": "from",
+    "named": false
+  },
+  {
+    "type": "global",
+    "named": false
+  },
+  {
+    "type": "here",
+    "named": false
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "import",
+    "named": false
+  },
+  {
+    "type": "inequality_op",
+    "named": true
+  },
+  {
+    "type": "integer",
+    "named": true
+  },
+  {
+    "type": "lr_arrow_op",
+    "named": true
+  },
+  {
+    "type": "match",
+    "named": false
+  },
+  {
+    "type": "muldiv_op",
+    "named": true
+  },
+  {
+    "type": "or_op",
+    "named": true
+  },
+  {
+    "type": "package",
+    "named": false
+  },
+  {
+    "type": "prim",
+    "named": false
+  },
+  {
+    "type": "publish",
+    "named": false
+  },
+  {
+    "type": "quantifier_op",
+    "named": true
+  },
+  {
+    "type": "regexp",
+    "named": true
+  },
+  {
+    "type": "require",
+    "named": false
+  },
+  {
+    "type": "single_string",
+    "named": true
+  },
+  {
+    "type": "subscribe",
+    "named": false
+  },
+  {
+    "type": "target",
+    "named": false
+  },
+  {
+    "type": "then",
+    "named": false
+  },
+  {
+    "type": "topic",
+    "named": false
+  },
+  {
+    "type": "tuple",
+    "named": false
+  },
+  {
+    "type": "type",
+    "named": false
+  },
+  {
+    "type": "unary",
+    "named": false
+  },
+  {
+    "type": "unary_fn_op",
+    "named": true
+  },
+  {
+    "type": "unreachable",
+    "named": false
+  }
+]
