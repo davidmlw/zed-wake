@@ -3,6 +3,18 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-wasip2
+          components: rustfmt, clippy
+      - run: cargo fmt --check
+      - run: cargo clippy --locked --all-targets -- -D warnings
+      - run: cargo test --locked
+      - run: cargo build --locked --release --target wasm32-wasip2
   queries:
     runs-on: ubuntu-latest
     steps:

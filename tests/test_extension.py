@@ -55,6 +55,10 @@ class ExtensionTests(unittest.TestCase):
         self.assertEqual(grammar["path"], "grammar")
         self.assertRegex(grammar["rev"], r"^[0-9a-f]{40}$")
         self.assertTrue((ROOT / grammar["path"] / "src/parser.c").is_file())
+        config = tomllib.loads((ROOT / "languages/wake/config.toml").read_text())
+        self.assertIn(config["name"], manifest["language_servers"]["wake"]["languages"])
+        cargo = tomllib.loads((ROOT / "Cargo.toml").read_text())
+        self.assertEqual(manifest["version"], cargo["package"]["version"])
 
     def test_examples_parse_without_errors(self):
         for path in sorted((ROOT / "examples").glob("*.wake")):

@@ -1,12 +1,16 @@
 id = "wake"
 name = "SiFive Wake"
-version = "0.1.0"
+version = "0.2.0"
 schema_version = 1
 authors = ["davidmlw"]
-description = "Syntax highlighting, outlines, and bracket matching for the SiFive Wake build language"
+description = "Syntax highlighting, outlines, and language-server support for the SiFive Wake build language"
 repository = "https://github.com/davidmlw/zed-wake"
 
 [grammars.wake]
 repository = "https://github.com/davidmlw/zed-wake"
 rev = "4109b69fa8a2a6bdc1aa105afdbc0e9b2001c37f"
 path = "grammar"
+
+[language_servers.wake]
+name = "Wake LSP"
+languages = ["Wake"]
