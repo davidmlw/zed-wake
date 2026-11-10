@@ -1,0 +1,40 @@
+# Syntax showcase for the Zed Wake extension.
+# This file is a parser fixture; it is not a standalone executable build.
+package showcase
+from wake import _
+
+export data Color = Red | Green | Blue
+
+export tuple Point =
+  X: Integer
+  Y: Integer
+
+export def greet who = "Hello, {who}!"
+def raw = 'raw string'
+def pattern = `.*\.wake$`
+def answer = 42
+def fraction = 3.14
+def enabled = True
+def parenthesized = (answer + 1)
+def choose flag = if flag then "yes" else "no"
+def apply f value = f value
+def addOne = \value value + 1
+
+def nested name =
+  def suffix = "!"
+  "{greet name}{suffix}"
+
+def colorName color =
+  match color
+    Red -> "red"
+    Green -> "green"
+    Blue -> "blue"
+
+def checked value =
+  require Some item = value
+  else "missing"
+  greet item
+
+topic events: String
+publish events = "ready"
+target hello = greet "Wake"

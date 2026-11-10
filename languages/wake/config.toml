@@ -1,0 +1,12 @@
+name = "Wake"
+grammar = "wake"
+path_suffixes = ["wake"]
+line_comments = ["# "]
+tab_size = 2
+hard_tabs = false
+brackets = [
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "\"", end = "\"", close = true, newline = false, not_in = ["string", "comment"] },
+  { start = "'", end = "'", close = true, newline = false, not_in = ["string", "comment"] },
+  { start = "`", end = "`", close = true, newline = false, not_in = ["string", "comment"] },
+]

@@ -1,0 +1,38 @@
+# Modern syntax used by Wake 42-era projects.
+package modern
+from wake import _
+
+export def identity (value: String): String = value
+
+export def unpack (value: Option String): String =
+  require Some item = value
+  else
+    "missing"
+  item
+
+export def fallback value =
+  require True = value
+  "accepted"
+
+export def render value =
+  match value
+    Some item if item != "" -> "{item}"
+    _ -> "empty"
+
+export def checkedBuild value =
+  require Some item = value
+  def label = "building {item}"
+  require True = item != ""
+  else "missing"
+  label
+
+export data a; b = a; b
+export def first (item; _) = item
+export target named (name: String): String = name
+
+def multiline value =
+  def (
+    Some
+    item
+  ) = value
+  item

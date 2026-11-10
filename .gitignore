@@ -1,0 +1,6 @@
+/grammars/
+/.venv/
+__pycache__/
+*.so
+*.wasm
+/node_modules/
