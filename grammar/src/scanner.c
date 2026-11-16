@@ -3,6 +3,10 @@
 #include <tree_sitter/parser.h>
 
 #define MAX_HERE_PREFIX 8
+#define MAX_STRING_DEPTH 24
+
+_Static_assert(2 + 32 + MAX_STRING_DEPTH * (1 + MAX_HERE_PREFIX * sizeof(int32_t))
+               <= TREE_SITTER_SERIALIZATION_BUFFER_SIZE, "scanner state must fit Tree-sitter's buffer");
 
 enum TokenType {
   EOL,
@@ -15,12 +19,17 @@ enum TokenType {
   STRING_SIMPLE
 };
 
-// No more than 32 levels deep or 100 characters total.
+struct StringContext {
+  bool multiline;
+  int32_t heredoc[MAX_HERE_PREFIX];
+};
+
+// Bound indentation and nested interpolation to the scanner serialization buffer.
 struct Indentation {
   unsigned char depth;
   unsigned char stack[32];
-  int32_t heredoc[MAX_HERE_PREFIX];
-  int32_t tabkind[100];
+  unsigned char string_depth;
+  struct StringContext strings[MAX_STRING_DEPTH];
 };
 
 void *tree_sitter_wake_external_scanner_create() {
@@ -34,22 +43,36 @@ void tree_sitter_wake_external_scanner_destroy(void *payload) {
 
 unsigned tree_sitter_wake_external_scanner_serialize(void *payload, char *buffer) {
   struct Indentation *i = payload;
-  unsigned here = sizeof(i->heredoc);
-  unsigned stack = i->depth;
-  memcpy(buffer, &i->heredoc[0], here);
-  memcpy(buffer+here, &i->stack[0], stack);
-  return here+stack;
+  unsigned length = 0;
+  buffer[length++] = i->depth;
+  memcpy(buffer + length, i->stack, i->depth);
+  length += i->depth;
+  buffer[length++] = i->string_depth;
+  for (unsigned n = 0; n < i->string_depth; ++n) {
+    buffer[length++] = i->strings[n].multiline;
+    memcpy(buffer + length, i->strings[n].heredoc, sizeof(i->strings[n].heredoc));
+    length += sizeof(i->strings[n].heredoc);
+  }
+  return length;
 }
 
 void tree_sitter_wake_external_scanner_deserialize(void *payload, const char *buffer, unsigned length) {
   struct Indentation *i = payload;
-  unsigned here = sizeof(i->heredoc);
-  if (length == 0) {
-    i->depth =0;
-  } else {
-    i->depth = length - here;
-    memcpy(&i->heredoc[0], buffer, here);
-    memcpy(&i->stack[0], buffer+here, length-here);
+  memset(i, 0, sizeof(*i));
+  if (length < 2) return;
+  unsigned depth = (unsigned char)buffer[0];
+  if (depth > sizeof(i->stack) || length < depth + 2) return;
+  unsigned strings = (unsigned char)buffer[depth + 1];
+  unsigned frame = 1 + sizeof(i->strings[0].heredoc);
+  if (strings > MAX_STRING_DEPTH || length != depth + 2 + strings * frame) return;
+  i->depth = depth;
+  memcpy(i->stack, buffer + 1, depth);
+  i->string_depth = strings;
+  unsigned offset = depth + 2;
+  for (unsigned n = 0; n < strings; ++n) {
+    i->strings[n].multiline = buffer[offset++] != 0;
+    memcpy(i->strings[n].heredoc, buffer + offset, sizeof(i->strings[n].heredoc));
+    offset += sizeof(i->strings[n].heredoc);
   }
 }
 
@@ -67,14 +90,14 @@ static bool is_str_special(int32_t c) {
   return c == '"' || c == '\\' || c == '{';
 }
 
-static bool skip_till_close(TSLexer *lexer, struct Indentation *i) {
+static bool skip_till_close(TSLexer *lexer, const struct StringContext *context) {
   unsigned x = 0;
   unsigned p;
   int32_t ring[MAX_HERE_PREFIX], flat[MAX_HERE_PREFIX];
 
   // Measure the required escape string length
   for (p = 0; p < MAX_HERE_PREFIX; ++p)
-    if (!i->heredoc[p]) break;
+    if (!context->heredoc[p]) break;
 
   // Clear ring
   memset(ring, 0, sizeof(ring));
@@ -92,7 +115,7 @@ top:
   memcpy(&flat[MAX_HERE_PREFIX-x], &ring[0], x*sizeof(int32_t));
 
   // If the prefix does not match, scan again.
-  if (memcmp(&i->heredoc[0], &flat[MAX_HERE_PREFIX-p], p*sizeof(int32_t)) != 0) {
+  if (memcmp(context->heredoc, &flat[MAX_HERE_PREFIX-p], p*sizeof(int32_t)) != 0) {
     lexer->advance(lexer, false);
     goto top;
   }
@@ -105,6 +128,53 @@ top:
     goto top;
   }
   return true;
+}
+
+enum StringStop { STOP_ERROR, STOP_END, STOP_INTERPOLATION };
+
+// Modern multiline strings are raw except for %{...}; only a line-leading
+// triple quote closes them, matching Wake's lex_mstr_continue.
+static enum StringStop scan_multiline(TSLexer *lexer, bool line_start) {
+  while (!lexer->eof(lexer)) {
+    if (line_start) {
+      while (is_lws(lexer->lookahead)) {
+        lexer->advance(lexer, false);
+      }
+      if (lexer->lookahead == '"') {
+        unsigned quotes = 0;
+        while (quotes < 3 && lexer->lookahead == '"') {
+          lexer->advance(lexer, false);
+          ++quotes;
+        }
+        if (quotes == 3) {
+          return STOP_END;
+        }
+        line_start = false;
+        continue;
+      }
+    }
+    if (lexer->lookahead == '%') {
+      lexer->advance(lexer, false);
+      if (lexer->lookahead == '{') {
+        lexer->advance(lexer, false);
+        return STOP_INTERPOLATION;
+      }
+      line_start = false;
+      continue;
+    }
+    line_start = is_nl(lexer->lookahead);
+    lexer->advance(lexer, false);
+  }
+  return STOP_ERROR;
+}
+
+static enum StringStop scan_string_tail(TSLexer *lexer, const struct StringContext *context,
+                                       bool line_start) {
+  if (context->multiline) return scan_multiline(lexer, line_start);
+  if (!skip_till_close(lexer, context)) return STOP_ERROR;
+  enum StringStop stop = lexer->lookahead == '"' ? STOP_END : STOP_INTERPOLATION;
+  lexer->advance(lexer, false);
+  return stop;
 }
 
 bool tree_sitter_wake_external_scanner_scan(void *payload, TSLexer *lexer, const bool *valid_symbols) {
@@ -120,25 +190,37 @@ bool tree_sitter_wake_external_scanner_scan(void *payload, TSLexer *lexer, const
 
 empty:
   if ((valid_symbols[STRING_START] || valid_symbols[STRING_SIMPLE]) && lexer->lookahead == '"') {
+    struct StringContext context = {0};
     lexer->advance(lexer, false);
-    memset(&i->heredoc[0], 0, sizeof(i->heredoc));
-    for (int j = 0; j < MAX_HERE_PREFIX && !is_nl(lexer->lookahead) && !is_str_special(lexer->lookahead); ++j) {
-      i->heredoc[j] = lexer->lookahead;
-      lexer->advance(lexer, false);
-    }
-    // If not multiline, clear the heredoc prefix
-    if (!is_nl(lexer->lookahead)) {
-      memset(&i->heredoc[0], 0, sizeof(i->heredoc));
-    }
-    if (!skip_till_close(lexer, i)) return false;
     if (lexer->lookahead == '"') {
       lexer->advance(lexer, false);
+      if (lexer->lookahead == '"') {
+        context.multiline = true;
+        lexer->advance(lexer, false);
+        while (is_lws(lexer->lookahead)) lexer->advance(lexer, false);
+        if (!is_nl(lexer->lookahead)) return false;
+        lexer->advance(lexer, false);
+      } else {
+        lexer->mark_end(lexer);
+        lexer->result_symbol = STRING_SIMPLE;
+        return valid_symbols[STRING_SIMPLE];
+      }
+    }
+    if (!context.multiline) {
+      for (int j = 0; j < MAX_HERE_PREFIX && !is_nl(lexer->lookahead) && !is_str_special(lexer->lookahead); ++j) {
+        context.heredoc[j] = lexer->lookahead;
+        lexer->advance(lexer, false);
+      }
+      if (!is_nl(lexer->lookahead)) memset(context.heredoc, 0, sizeof(context.heredoc));
+    }
+    enum StringStop stop = scan_string_tail(lexer, &context, context.multiline);
+    if (stop == STOP_END) {
       lexer->mark_end(lexer);
       lexer->result_symbol = STRING_SIMPLE;
       return valid_symbols[STRING_SIMPLE];
     }
-    if (lexer->lookahead == '{') {
-      lexer->advance(lexer, false);
+    if (stop == STOP_INTERPOLATION && valid_symbols[STRING_START] && i->string_depth < MAX_STRING_DEPTH) {
+      i->strings[i->string_depth++] = context;
       lexer->mark_end(lexer);
       lexer->result_symbol = STRING_START;
       return valid_symbols[STRING_START];
@@ -146,15 +228,17 @@ empty:
   }
 
   if ((valid_symbols[STRING_MIDDLE] || valid_symbols[STRING_END]) && lexer->lookahead == '}') {
-    if (!skip_till_close(lexer, i)) return false;
-    if (lexer->lookahead == '"') {
-      lexer->advance(lexer, false);
+    if (!i->string_depth) return false;
+    const struct StringContext *context = &i->strings[i->string_depth - 1];
+    if (context->multiline) lexer->advance(lexer, false);
+    enum StringStop stop = scan_string_tail(lexer, context, false);
+    if (stop == STOP_END && valid_symbols[STRING_END]) {
+      --i->string_depth;
       lexer->mark_end(lexer);
       lexer->result_symbol = STRING_END;
       return valid_symbols[STRING_END];
     }
-    if (lexer->lookahead == '{') {
-      lexer->advance(lexer, false);
+    if (stop == STOP_INTERPOLATION) {
       lexer->mark_end(lexer);
       lexer->result_symbol = STRING_MIDDLE;
       return valid_symbols[STRING_MIDDLE];

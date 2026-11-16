@@ -1,0 +1,21 @@
+package multiline
+
+def script =
+  """
+  set -eu
+  if ! git diff --quiet HEAD --; then revision="$revision-dirty"; fi
+  test -e .git || { echo 'missing source'; exit 1; }
+  printf '%s\n' "$revision"
+  echo triple quotes inside a line: """
+  """
+
+def after = 42
+
+def manifest name =
+  """
+  package generated
+  def label = %{format "hello {name}"}
+  def again = %{format name}
+  """
+
+def finished = True

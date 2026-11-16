@@ -26,6 +26,10 @@ Local changes from upstream:
 - Accept multiline parenthesized patterns.
 - Initialize scanner state and stop scanning unterminated strings at EOF
   so incomplete edits cannot hang the editor.
+- Recognize modern triple-quoted multiline strings, including raw quotes and
+  shell braces, line-leading closing delimiters and `%{...}` interpolation.
+  Nested interpolated strings retain independent scanner state (up to 24
+  nested interpolations within Tree-sitter's fixed serialization buffer).
 - Set the scanner's EOL token explicitly; update one invalid-input corpus
   expectation for the modern generator's error recovery.
 
